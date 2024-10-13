@@ -13,6 +13,15 @@ export default ts.config(
       parserOptions: {
         parser: ts.parser
       }
+    },
+    rules: {
+      "vue/html-closing-bracket-newline": [
+        "error",
+        {
+          singleline: "never",
+          multiline: "never",
+        }
+      ]
     }
   }
 )
