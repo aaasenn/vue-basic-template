@@ -1,23 +1,29 @@
 <template>
-  <div class="todoItem">
+  <div
+    v-if="id"
+    class="todoItem">
     {{ title }}
     <span
       class="danger-button"
-      @click="handleRemoveItem(id)">x</span>
+      @click="handleRemovePiniaTodo(id)">x</span>
   </div>
 </template>
 
 <script setup lang="ts">
 interface Props {
   title: string,
-  id: number
+  id: string
 }
 const { title, id } = defineProps<Props>()
 
-const emits = defineEmits<{(e: "removeItem", index: number): void}>();
+const emits = defineEmits<{(e: "removeItem", index: number): void, (e: "removePiniaTodo", id: string): void}>();
 
 const handleRemoveItem = (index: number) => {
   emits("removeItem", index)
+}
+
+const handleRemovePiniaTodo = (id: string) => {
+  emits("removePiniaTodo", id)
 }
 </script>
 

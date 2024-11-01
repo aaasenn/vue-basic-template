@@ -1,9 +1,9 @@
 <template>
-  <CreateTodo />
+  <CreatePiniaTodo />
 </template>
 
 <script setup lang="ts">
-import CreateTodo from 'features/create-todo/ui/CreateTodo.vue';
+import { CreatePiniaTodo } from 'features/create-pinia-todo';
 
 </script>
 
